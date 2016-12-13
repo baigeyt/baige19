@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9cce31"
+    android:orientation="vertical" >
+
+    <!-- 中上框架 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical" >
+
+        <!-- 学校简介 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:background="#09cc32" >
+
+            <include layout="@layout/introduce" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#9cce31" />
+
+        <!-- 实时拍照、图片展示 -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp" >
+
+            <include layout="@layout/showphoto" />
+
+            <include layout="@layout/schoolinfo" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- 底部信息栏 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <!-- 时间 -->
+
+                <ImageView
+                    android:id="@+id/school_LOGO"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/aa" />
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="10"
+                    android:background="#09cc32"
+                    android:orientation="vertical" >
+
+                    <!-- 学校公告 -->
+
+                    <com.tony.autoscroll.AutoScrollView
+                        android:id="@+id/auto_scrollview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textNotice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:isScrollContainer="true"
+                                android:text="学校公告:"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+                    </com.tony.autoscroll.AutoScrollView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#9cce31" />
+
+                    <!-- 学校天气 -->
+
+                    <TextView
+                        android:id="@+id/textWeather"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.7"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="left"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textColor="#000095"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.3"
+                    android:background="#09cc32"
+                    android:orientation="vertical" >
+
+                    <!-- 连接信息 -->
+
+                    <TextView
+                        android:id="@+id/textConnect"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingBottom="5dp"
+                        android:text="网络状态"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/allcount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingTop="10dp"
+                        android:text="刷卡数 : 0"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/aaaa"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="上传数 : 0"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hyc.baige"
+    android:versionCode="1"
+    android:versionName="2.1.5.baige.OK" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <!-- 完成启动广播 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    
+    <!-- 调用相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 一些网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    
+
+    <permission android:name="android.permission.UPDATE_DEVICE_STATS" />
+
+    <!-- 读写SD卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+
+    <application
+        android:name="com.hyc.baige.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/baige"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:largeHeap="true">
+        <activity
+            android:name="com.hyc.qidong.Reflesh"
+            android:label="@string/app_name"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.hyc.baige.MainActivity"
+            android:exported="true" >
+           
+        </activity>
+
+        <service android:name="com.hyc.baige.MyService" />
+        
+       <receiver android:name="com.hyc.baige.BroadCastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.hyc.network.NetReceiver" >
+            <intent-filter>
+                <action android:name="com.test.broadcast" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
